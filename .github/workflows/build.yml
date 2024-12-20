@@ -1,4 +1,4 @@
-name: Build and push mall images
+name: Build and push mall-app images
 
 on:
   push:
@@ -20,6 +20,8 @@ jobs:
             repo: mall-app-vke
             context: ./docker/vke
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Copy dist to folder
         run: cd ./docker && bash copy-html.sh
         shell: bash
