@@ -20,11 +20,8 @@ jobs:
             repo: mall-app-vke
             context: ./docker/vke
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
       - name: Copy dist to folder
-        run: cd docker && bash copy-html.sh
+        run: cd ./docker && bash copy-html.sh
         shell: bash
 
       - name: Log in to the Docker registry

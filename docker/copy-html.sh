@@ -8,6 +8,7 @@ usage() {
 
 # copy html
 echo "begin copy html to ack "
+unzip ../dist.zip
 cp -r ../dist ./ack/
 
 find ./ack/dist -type f -name "index.html" |xargs sed -i "s#datakit_env#prod#g"
