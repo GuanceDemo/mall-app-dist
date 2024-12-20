@@ -11,14 +11,14 @@ echo "begin copy html to ack "
 unzip ../dist.zip
 cp -r dist ./ack/
 
-find ./ack/dist -type f -name "index.html" |xargs sed -i "s#datakit_env#prod#g"
-find ./ack/dist -type f -name "index.html" |xargs sed -i "s#datakit_service#mall-app-ack#g"
+find ./ack/dist -type f -name "*" |xargs sed -i "s#datakit_env#prod#g"
+find ./ack/dist -type f -name "*" |xargs sed -i "s#datakit_service#mall-app-ack#g"
 echo 'ls ./ack'
 ls ./ack
 
 echo "begin copy html to vke "
 cp -r dist ./vke/
-find ./vke/dist -type f -name "index.html" |xargs sed -i "s#datakit_env#test#g"
-find ./vke/dist -type f -name "index.html" |xargs sed -i "s#datakit_service#mall-app-vke#g"
+find ./vke/dist -type f -name "*" |xargs sed -i "s#datakit_env#test#g"
+find ./vke/dist -type f -name "*" |xargs sed -i "s#datakit_service#mall-app-vke#g"
 echo 'ls ./vke'
 ls ./vke
